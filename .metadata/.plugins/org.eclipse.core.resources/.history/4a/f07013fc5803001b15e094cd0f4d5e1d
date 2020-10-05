@@ -1,0 +1,37 @@
+package br.com.lojauati.modelo;
+
+public class Formula1 {
+	private String escuderia;
+	private float valor;
+	private int rpm;
+	private String todosOsValores;
+	/*
+	 * síntaxe para criação de métodos no Java:
+	 * <modificador> <tipo do retorno> <nomeDoMetodo> (<tipo do parametro> <nome do parametro>) 
+	 */
+	
+	
+	/*
+	 * crie um método para preencher tudo - preencherTudo()
+	 * crie um método para exibir tudo - exibirTudo()
+	 * crie um método para exibir o valor com 10% - exibirPromocao()
+	 * crie um método para exibir o valor com desconto a ser recebido por parametro - exibirPromocao()
+	 */
+	public void preencherTudo(String nomeEscuderia, String continenteFabricacao, float anoDeFabricacao, int potencia, int cilindros) {
+		escuderia = nomeEscuderia.toUpperCase();
+		float taxaAnoFabricacao = 1;
+		float taxaContinenteFabricacao = 1;
+		if (continenteFabricacao.contentEquals("Europa")) {
+			taxaContinenteFabricacao = (float)1.5;
+		}
+		if (anoDeFabricacao < 2010) {
+			taxaAnoFabricacao = (float) 0.6;
+		}
+		valor = 1000000 * taxaAnoFabricacao * taxaContinenteFabricacao;
+		rpm = potencia * cilindros * 10;
+		todosOsValores = escuderia + "\n" + valor + "\n" + rpm;
+	}
+	public String exibirTudo() {
+		return escuderia + valor + rpm;
+	}
+}

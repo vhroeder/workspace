@@ -1,0 +1,15 @@
+package repeticao;
+
+import javax.swing.JOptionPane;
+
+public class ExemploDoWhile {
+
+	public static void main(String[] args) {
+		// pedir o nome da pessoa e só aceitar quando o mesmo tiver entre 5 e 15 carácteres
+		int valor1 = Integer.parseInt(JOptionPane.showInputDialog("Digite o valor 1"));
+		int valor2 = Integer.parseInt(JOptionPane.showInputDialog("Digite o valor 2"));
+		char opcao = JOptionPane.showInputDialog("Digite o operador aritmético").charAt(0);
+		
+	}
+
+}

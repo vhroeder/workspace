@@ -1,0 +1,46 @@
+package br.com.universidade.modelo;
+
+public class Professor {
+	private int id;
+	private String nome;
+	private float valorHora;
+	private String formacao;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public float getValorHora() {
+		return valorHora;
+	}
+	public void setValorHora(float salario, int cargaHoraria) {
+		this.valorHora = salario / cargaHoraria;
+	}
+	public String getFormacao() {
+		return formacao;
+	}
+	public void setFormacao(String formacao) {
+		this.formacao = formacao;
+	}
+	public String getAll() {
+		return
+				"ID: " + this.id + "\n" +
+				"Nome: " + this.nome + "\n" +
+				"Valor Hora: R$ " + this.valorHora + "/hora\n" +
+				"Formação: " + this.formacao;
+	}
+	public void setAll(int id, String nome, float valorHora, String formacao) {
+		this.id = id;
+		this.nome = nome;
+		this.valorHora = valorHora;
+		this.formacao = formacao;
+	}
+}

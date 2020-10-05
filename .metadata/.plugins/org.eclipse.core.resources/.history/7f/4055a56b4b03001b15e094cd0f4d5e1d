@@ -1,0 +1,17 @@
+package br.com.lojauati.modelo;
+
+public class Formula1 {
+	private String escuderia;
+	private float valor;
+	private int rpm;
+	/*
+	 * síntaxe para criação de métodos no Java:
+	 * <modificador> <tipo do retorno> <nomeDoMetodo> (<tipo do parametro> <nome do parametro>) 
+	 */
+	public void preencherEscuderia(String parametro) {
+		escuderia = parametro.toUpperCase();
+	}
+	public void exibirEscuderia() {
+		return escuderia;
+	}
+}

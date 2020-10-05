@@ -1,0 +1,30 @@
+package variaveis;
+
+import javax.swing.JOptionPane;
+
+public class Variavel {
+	//Variavel é um espaço temporário na memória RAM onde você armazena UM dado
+	public static void main(String[] args) {
+		// Sintaxe para criar variavel:
+		//<tipo de dado> <nome da variavel>;
+		/*
+		 * Tipos de dados:
+		 * A) Numérico: o dado que será utilizado em uma operação matemática.
+		 * tambem sao para dados que precisam de processassemento mais rápido (exemplo do CEP dos correios)
+		 * B) Alfanumérico: não é utilizado para operações matemáticas.
+		 * 
+		 */
+		String nome = ""; //tipo de dado por Referência (porque ele é uma classe)
+		int idade = 0; //tipo numerico inteiro primitivo
+		double altura = 0; //tipo numerico real primitivo
+		
+		nome = JOptionPane.showInputDialog("Digite seu nome");
+		idade = Integer.parseInt(JOptionPane.showInputDialog("Digite sua idade"));
+		altura = Double.parseDouble(JOptionPane.showInputDialog("Digite a altura"));
+		
+		System.out.println("Nome: " + nome);
+		System.out.println("Idade: " + idade);
+		System.out.println("Altura: " + altura + "m");
+	}
+
+}

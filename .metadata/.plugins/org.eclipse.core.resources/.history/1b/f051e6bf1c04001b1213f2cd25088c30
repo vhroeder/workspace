@@ -1,0 +1,17 @@
+package br.com.universidade.implementacao;
+
+import javax.swing.JOptionPane;
+
+import br.com.universidade.modelo.Aluno;
+import br.com.universidade.modelo.Endereco;
+
+public class ImplementacaoAluno {
+
+	public static void main(String[] args) {
+		Aluno estudante = new Aluno();
+		Endereco endereco = new Endereco();
+		estudante.setAll(Integer.parseInt(JOptionPane.showInputDialog("Matrícula")), JOptionPane.showInputDialog("Nome Completo"));
+		System.out.println(estudante.getAll());
+	}
+
+}

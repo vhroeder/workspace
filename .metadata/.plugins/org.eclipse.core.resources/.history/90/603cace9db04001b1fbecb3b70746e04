@@ -1,0 +1,30 @@
+package br.com.ecommerce.implementacao;
+
+import br.com.ecommerce.beans.Cliente;
+import br.com.ecommerce.beans.PessoaFisica;
+import br.com.ecommerce.beans.PessoaJuridica;
+import br.com.ecommerce.tela.Magica;
+
+public class ImplementacaoCliente {
+
+	public static void main(String[] args) {
+		
+		char opcao = Magica.s("Digite\n<1> PJ\n<2> PF").charAt(0);
+		Cliente cliente = null;
+		if (opcao =='i') {
+			
+		}else if (opcao == '2') {
+			
+		}else {
+			
+		}
+		
+		PessoaJuridica p = new PessoaJuridica();
+		
+		PessoaFisica p2 = new PessoaFisica();
+		
+		Cliente p3 = new PessoaFisica ();
+
+	}
+
+}

@@ -1,0 +1,7 @@
+package br.com.lojauati.modelo;
+
+public class Formula1 {
+	private String escuderia;
+	private float valor;
+	private int rpm;
+}

@@ -1,0 +1,16 @@
+package repeticao;
+
+public class Snippet {
+	public static void main(String[] args) {
+		System.out.println(numero2);
+					if (numero3 > numero1) {
+						System.out.println(numero3);
+						System.out.println(numero1);
+						}
+					else {
+						System.out.println(numero1);
+						System.out.println(numero3);
+					}
+	}
+}
+

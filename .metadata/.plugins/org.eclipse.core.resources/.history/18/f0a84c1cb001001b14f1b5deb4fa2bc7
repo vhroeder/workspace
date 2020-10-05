@@ -1,0 +1,28 @@
+package variaveis;
+
+public class Variavel {
+	//Variavel é um espaço temporário na memória RAM onde você armazena UM dado
+	public static void main(String[] args) {
+		// Sintaxe para criar variavel:
+		//<tipo de dado> <nome da variavel>;
+		/*
+		 * Tipos de dados:
+		 * A) Numérico: o dado que será utilizado em uma operação matemática.
+		 * 
+		 * B) Alfanumérico: não é utilizado para operações matemáticas.
+		 * 
+		 */
+		String nome = "";
+		int idade = 0;
+		double altura = 0;
+		
+		nome = "Victor Roeder";
+		idade = 30;
+		altura = 1.77;
+		
+		System.out.print(nome);
+		System.out.print(idade);
+		System.out.print(altura);
+	}
+
+}

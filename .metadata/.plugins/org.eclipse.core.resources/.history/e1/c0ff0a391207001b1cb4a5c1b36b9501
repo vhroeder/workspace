@@ -1,0 +1,61 @@
+package br.com.universidade.modelo;
+
+import br.com.universidade.padroes.PadraoFormacao;
+
+public class Pos extends Formacao implements PadraoFormacao {
+	private String nivel;
+	private boolean planoEstendido;
+	//construtores
+
+	public Pos(float valor, String descricao, int duracao, String nivel, boolean planoEstendido) {
+		super(valor, descricao, duracao);
+		this.nivel = nivel;
+		this.planoEstendido = planoEstendido;
+	}
+	public Pos() {
+		super();
+	}
+		
+	//get all e set all
+	
+	public String getAll() {
+		String resposta = "SIM";
+		if (planoEstendido == false) {
+			resposta = "NÃO";
+		}
+		return
+				"Nível: " + this.nivel + "\n" +
+				"Plano Estendido?: " + resposta + "\n" +
+				super.getAll();
+	}
+	public void setAll(float valor, String descricao, int duracao, String nivel, boolean planoEstendido) {
+		super.setAll(valor, descricao, duracao);
+		this.nivel = nivel;
+		this.planoEstendido = planoEstendido;
+	}
+	
+	//gets e sets individuais
+	
+	public String getNivel() {
+		return nivel;
+	}
+	public void setNivel(String nivel) {
+		this.nivel = nivel;
+	}
+	public boolean isPlanoEstendido() {
+		return planoEstendido;
+	}
+	public void setPlanoEstendido(boolean planoEstendido) {
+		this.planoEstendido = planoEstendido;
+	}
+	@Override
+	public double calcularMensalidade(float fator) {
+		return getValor/18 * fator;
+	}
+	@Override
+	public void definirDuracao() {
+		setDuracao(18);
+	}
+	
+}
+	

@@ -1,0 +1,19 @@
+package br.com.universidade.modelo;
+
+public class Aluno {
+	private int rm;
+	private String nome;
+	private String email;
+
+	public void preencherDados(int pRm, String pNome) {
+		rm = pRm;
+		nome = pNome.toUpperCase();
+		email = nome.substring(0, nome.indexOf(" ",0)).toLowerCase() + "." + "aluno@universidade.com.br";
+	}
+	public String exibirDados(){
+		return
+				"Matrícula: " + rm +"\n" +
+				"Nome: " + nome + "\n" +
+				"E-mail: " + email;
+	}
+}

@@ -1,0 +1,41 @@
+package decisao;
+
+import javax.swing.JOptionPane;
+
+public class DecisaoSimples {
+	/*
+	 * Identificadores = nomes (classe, variavel...)
+	 * Regras:
+	 * 1º Não começarás com número: 1berto (errado), h1berto (certo)
+	 * 2º Não usarás carácteres especiais (@. #, -) Exceção: underline (_)
+	 * 3º Não usarás palavras reservadas da linguagem (while, string, class)
+	 *  
+	 * Padrões (variáveis):
+	 * - nomes significativos
+	 * - sempre começam com letras minúsculas
+	 * - utilizar o padrão Camel Case
+	 * 
+	 */
+	public static void main(String[] args) {
+		String nome = JOptionPane.showInputDialog("Digite o nome do aluno").toUpperCase();
+		float nota1 = Float.parseFloat(JOptionPane.showInputDialog("Digite a nota 1"));
+		float nota2 = Float.parseFloat(JOptionPane.showInputDialog("Digite a nota 2"));
+		float nota3 = Float.parseFloat(JOptionPane.showInputDialog("Digite a nota 3"));
+		float media = (nota1 + nota2 + nota3) / 3;
+		System.out.println("Aluno: " + nome + " sua média foi: " + media);
+		if (media >= 6) {
+			System.out.println("Parabéns " + nome + "! Você está aprovado!");
+		}
+		//Exercício: mostrar menagem "Infelizmente xxxx você foi reprovado! se média < 4
+		if (media < 4) {
+			System.out.println("Infelizmente " + nome + " você foi reprovado!");
+		}
+		// and => &&
+		// or => ||
+		//Exercício: se a media estiver entre 5.9 e 4 tem que mostrar "XXXX você ainda tem chance no exame
+		if (media >= 4 && media < 6) {
+			System.out.println(nome + " você ainda tem chance no exame!");
+		}
+	}
+
+}

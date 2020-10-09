@@ -1,11 +1,19 @@
 package br.com.integracao.modelo;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name="tb_musica")
@@ -17,19 +25,23 @@ public class Musica {
 	@Column(name="titulo")
 	private String titulo;
 	@Column(name="lancamento")
-	private String lancamento;
+	private int lancamento;
+	@Temporal(TemporalType.DATE)
+	@JsonFormat(pattern="dd/MM/yyyy", shape=JsonFormat.Shape.STRING)
 	@Column(name="cadastro")
-	private String cadastro;
-	@Column(name="idartista")
-	private String idArtista;
-	public Musica(int id, String titulo, String lancamento, String cadastro, String idArtista) {
+	private Date cadastro;
+	@ManyToOne
+	@JsonIgnoreProperties("musicas")
+	private Artista artista;
+	public Musica(int id, String titulo, int lancamento, Date cadastro, Artista artista) {
 		super();
 		this.id = id;
 		this.titulo = titulo;
 		this.lancamento = lancamento;
 		this.cadastro = cadastro;
-		this.idArtista = idArtista;
+		this.artista = artista;
 	}
+	
 	public Musica() {
 		super();
 	}
@@ -45,22 +57,22 @@ public class Musica {
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-	public String getLancamento() {
+	public int getLancamento() {
 		return lancamento;
 	}
-	public void setLancamento(String lancamento) {
+	public void setLancamento(int lancamento) {
 		this.lancamento = lancamento;
 	}
-	public String getCadastro() {
+	public Date getCadastro() {
 		return cadastro;
 	}
-	public void setCadastro(String cadastro) {
+	public void setCadastro(Date cadastro) {
 		this.cadastro = cadastro;
 	}
-	public String getIdArtista() {
-		return idArtista;
+	public Artista getArtista() {
+		return artista;
 	}
-	public void setIdArtista(String idArtista) {
-		this.idArtista = idArtista;
+	public void setArtista(Artista artista) {
+		this.artista = artista;
 	}
 }

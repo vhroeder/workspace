@@ -1,9 +1,11 @@
 package br.com.integracao.dao;
 
+import java.util.List;
+
 import org.springframework.data.repository.CrudRepository;
 
 import br.com.integracao.modelo.Artista;
 
 public interface ArtistaDAO extends CrudRepository<Artista, Integer> {
-	Artista findByNacionalidade(String nacionalidade);
+	List<Artista> findByNacionalidade(String nacionalidade);
 }

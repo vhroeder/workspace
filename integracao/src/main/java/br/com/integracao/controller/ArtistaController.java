@@ -1,6 +1,5 @@
 package br.com.integracao.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,18 +42,14 @@ public class ArtistaController {
 	}
 	//retorna artistas por nacionalidade
 	@PostMapping("/artista/nacionalidade")
-	public ResponseEntity<List<Artista>> getByNacionalidade(@RequestBody String nacionalidade){
-		List<Artista> artistasNac = new ArrayList<Artista>();
-		for (Artista art : (List<Artista>) dao.findAll()) {
-			if (art.getNacionalidade().equals(nacionalidade)) {
-				artistasNac.add(art);
-			}
-		}
-		if (artistasNac.size() == 0) {
+	public ResponseEntity<List<Artista>> acharByNacionalidade(@RequestBody Artista objeto){
+		List<Artista> artistasPorNac = (List<Artista>) dao.findByNacionalidade(objeto.getNacionalidade());
+		if (artistasPorNac.size() == 0) {
 			return ResponseEntity.status(404).build();
 		}
-		return ResponseEntity.ok(artistasNac);
+		return ResponseEntity.ok(artistasPorNac);
 	}
+	
 	@PostMapping("/novoartista")
 	public ResponseEntity<Artista> novoArtista(@RequestBody Artista novo){
 		try {
